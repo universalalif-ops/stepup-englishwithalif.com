@@ -3,458 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>StepUp English – A1 to C1 Fluency Masterclass</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Hind+Siliguri:wght@400;500&display=swap" rel="stylesheet">
+<title>Learn with Alif — Free English Fluency</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#0F1E3D;--soft:#445678;--accent:#2F5BFF;--accent-ink:#fff;--ok:#0E8F5B;--bad:#C72D4B;
-  --g1:rgba(255,255,255,.65);--g2:rgba(255,255,255,.22);--edge:rgba(255,255,255,.8);--shadow:rgba(30,45,110,.18);
-  --b1:#9EC5FF;--b2:#C9B6FF;--b3:#FFD3B8;--base:#E8EEFF;
-  --font:"Manrope","Hind Siliguri",-apple-system,"SF Pro Display","Segoe UI",system-ui,sans-serif;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ink:#EEF3FF;--soft:#A9B8DA;--accent:#7C9BFF;--accent-ink:#0A1230;--ok:#5FE0A8;--bad:#FF8CA3;
-    --g1:rgba(255,255,255,.12);--g2:rgba(255,255,255,.03);--edge:rgba(255,255,255,.22);--shadow:rgba(0,0,0,.5);
-    --b1:#1A2C66;--b2:#3D256B;--b3:#5E2934;--base:#070C1B;color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --ink:#EEF3FF;--soft:#A9B8DA;--accent:#7C9BFF;--accent-ink:#0A1230;--ok:#5FE0A8;--bad:#FF8CA3;
-  --g1:rgba(255,255,255,.12);--g2:rgba(255,255,255,.03);--edge:rgba(255,255,255,.22);--shadow:rgba(0,0,0,.5);
-  --b1:#1A2C66;--b2:#3D256B;--b3:#5E2934;--base:#070C1B;color-scheme:dark;
-}
-
-*{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px);min-height:100%}
-body{
-  margin:0;min-height:100vh;font:400 17px/1.55 var(--font);color:var(--ink);
-  background:
-    radial-gradient(600px 500px at 10% 15%,var(--b1),transparent 70%),
-    radial-gradient(700px 600px at 90% 25%,var(--b2),transparent 70%),
-    radial-gradient(650px 550px at 50% 90%,var(--b3),transparent 70%),var(--base);
-  background-attachment:fixed;
-  overflow-x:hidden;
-  animation: bgPulse 20s ease infinite alternate;
-}
-@keyframes bgPulse {
-  0% { filter: brightness(1) saturate(1); }
-  50% { filter: brightness(1.04) saturate(1.08); }
-  100% { filter: brightness(1) saturate(1); }
-}
-
-/* Mouse Follower Spotlight */
-.mouse-glow {
-  pointer-events:none;position:fixed;width:450px;height:450px;
-  background:radial-gradient(circle, rgba(47,91,255,0.14) 0%, rgba(124,155,255,0.04) 50%, transparent 80%);
-  border-radius:50%;transform:translate(-50%,-50%);transition:width 0.2s ease,height 0.2s ease;
-  z-index:9999;mix-blend-mode:screen;
-}
-@media (prefers-color-scheme:dark){
-  .mouse-glow{background:radial-gradient(circle, rgba(124,155,255,0.18) 0%, rgba(90,58,156,0.06) 50%, transparent 80%)}
-}
-
-.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px;display:grid;gap:24px;grid-template-columns:minmax(0,1fr) 310px;align-items:start}
-header{grid-column:1/-1;padding:12px 4px}
-h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}
-.lead{margin:0;color:var(--soft);max-width:52ch;font-size:1.1rem}
-
-.glass{
-  background:linear-gradient(135deg,var(--g1),var(--g2));
-  -webkit-backdrop-filter:blur(28px) saturate(190%);backdrop-filter:blur(28px) saturate(190%);
-  border:1px solid var(--edge);border-radius:32px;
-  box-shadow:inset 0 1px 0 var(--edge),inset 0 -1px 0 rgba(255,255,255,.08),0 20px 50px var(--shadow);
-  transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s ease,border-color 0.3s ease;
-}
-.glass:hover{
-  border-color:var(--accent);
-  box-shadow:inset 0 1px 0 var(--edge),0 24px 60px var(--shadow),0 0 35px color-mix(in srgb,var(--accent) 20%,transparent);
-}
-.panel{padding:26px}
-aside{display:grid;gap:20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px)}
-
-h2{font-size:1.35rem;margin:0 0 6px;font-weight:800}
-.quote{font-size:1.35rem;font-weight:800;line-height:1.3;letter-spacing:-.01em;margin:8px 0 16px}
-.streak{font-size:2.6rem;font-weight:800;line-height:1}
-.muted{color:var(--soft);font-size:.96rem}
-
-button{font:600 1rem var(--font);color:var(--ink);cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1)}
-button:active{transform:scale(0.97)}
-button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-
-.pill{padding:12px 20px;border-radius:999px;border:1px solid var(--edge);background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:inset 0 1px 0 var(--edge)}
-.pill.main{background:var(--accent);color:var(--accent-ink);border-color:transparent;box-shadow:0 10px 25px color-mix(in srgb,var(--accent) 45%,transparent)}
-.pill:disabled{opacity:.45;cursor:not-allowed;transform:none!important}
-
-.level-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:16px}
-.ltab{padding:8px 14px;border-radius:999px;border:1px solid var(--edge);background:var(--g2);font-size:0.85rem;white-space:nowrap;font-weight:700}
-.ltab.active{background:var(--accent);color:var(--accent-ink);border-color:transparent}
-
-.steps{display:grid;gap:12px;margin-top:16px;max-height:550px;overflow-y:auto;padding-right:4px}
-.step{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 18px;border-radius:24px;border:1px solid var(--edge);background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:inset 0 1px 0 var(--edge)}
-.step:hover:not(:disabled){transform:translateY(-2px);border-color:var(--accent)}
-.step[disabled]{opacity:.45;cursor:not-allowed}
-.dot{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 16px color-mix(in srgb,var(--accent) 35%,transparent)}
-.step.done .dot{background:var(--ok);color:#fff}
-.step b{display:block;font-weight:800;font-size:1.05rem}
-.tag{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--soft)}
-
-.phr{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--edge)}
-.phr:last-child{border:0}
-.phr div{flex:1}
-.en{font-weight:700;font-size:1.15rem}
-.bn{color:var(--soft);font-size:.95rem;margin-top:2px}
-.spk{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--edge);background:var(--g1);display:grid;place-items:center;font-size:1.1rem}
-.spk:hover{background:var(--accent);color:var(--accent-ink)}
-
-.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.q{font-size:1.5rem;font-weight:800;margin:10px 0 16px;line-height:1.3}
-.opts{display:grid;gap:12px}
-.opt{text-align:left;padding:16px 18px;border-radius:20px;border:1px solid var(--edge);background:linear-gradient(135deg,var(--g1),var(--g2));font-weight:600;font-size:1.05rem}
-.opt:hover:not(:disabled){border-color:var(--accent);transform:translateY(-1px)}
-.opt.right{border:2px solid var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--g1))}
-.opt.wrong{border:2px solid var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--g1))}
-.fb{min-height:1.6em;font-weight:700;margin:14px 0 0}
-.big{font-size:3.2rem;font-weight:800;margin:8px 0}
-
-.stars{display:flex;gap:8px;margin:12px 0}
-.stars button{font-size:2rem;background:none;border:0;padding:2px 6px;color:var(--soft);line-height:1}
-.stars button.on{color:#F5B82E}
-textarea{width:100%;min-height:105px;padding:14px 16px;border-radius:20px;border:1px solid var(--edge);background:var(--g1);color:var(--ink);font:400 1rem var(--font);resize:vertical}
-textarea:focus{outline:3px solid var(--accent);outline-offset:2px}
-
-.full{grid-column:1/-1}
-[hidden]{display:none!important}
-
-/* Confetti Canvas */
-#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998}
-
-@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}aside{position:static;order:-1}}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:var(--base)}}
+:root{--bg:#f3f4ff;--tx:#10122b;--mu:#5a6086;--gl:rgba(255,255,255,.6);--bd:rgba(255,255,255,.85);--ac:#6c5cff;--ac2:#00b8f0;--ok:#16a34a;--no:#e11d48;--sh:0 12px 40px rgba(70,70,160,.16);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070817;--tx:#eef0ff;--mu:#9ca2cc;--gl:rgba(255,255,255,.07);--bd:rgba(255,255,255,.15);--sh:0 12px 40px rgba(0,0,0,.55)}}
+:root[data-theme="dark"]{--bg:#070817;--tx:#eef0ff;--mu:#9ca2cc;--gl:rgba(255,255,255,.07);--bd:rgba(255,255,255,.15);--sh:0 12px 40px rgba(0,0,0,.55)}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:"Plus Jakarta Sans","Hind Siliguri",system-ui,sans-serif;color:var(--tx);background:radial-gradient(700px 480px at 8% -5%,rgba(108,92,255,.38),transparent),radial-gradient(600px 460px at 100% 15%,rgba(0,184,240,.28),transparent),var(--bg);background-attachment:fixed;min-height:100vh;line-height:1.6}
+#cg{position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(108,92,255,.3),transparent 66%);pointer-events:none;z-index:0}
+#cr{position:fixed;top:0;left:0;width:28px;height:28px;border:1.5px solid var(--ac);border-radius:50%;pointer-events:none;z-index:90}
+@media(hover:none){#cg,#cr{display:none}}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:100;display:none}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 20px;backdrop-filter:blur(20px);background:var(--gl);border-bottom:1px solid var(--bd)}
+header b{font-weight:800;font-size:1.1rem;flex:1}
+header span{font-size:.85rem;color:var(--mu)}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:24px 18px 80px}
+.g{position:relative;overflow:hidden;background:var(--gl);border:1px solid var(--bd);backdrop-filter:blur(22px) saturate(1.6);border-radius:26px;box-shadow:var(--sh)}
+.g::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(108,92,255,.22),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.g:hover::before{opacity:1}
+.p{padding:24px;margin:16px 0}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;margin:.2em 0;letter-spacing:-.02em}
+h2{margin:32px 4px 12px;font-size:1.3rem}h2 i{font-style:normal;color:var(--mu);font-weight:400;font-size:.95rem}
+h3{margin:18px 0 8px}h4{margin:6px 0}
+.mu,small{color:var(--mu)}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:10px 18px;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));font-weight:600}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ac2);outline-offset:2px}
+.b2{background:var(--gl);color:var(--tx);border:1px solid var(--bd)}
+.cta{width:100%;padding:16px;font-size:1.05rem;margin-top:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{padding:18px;cursor:pointer;transition:transform .2s}.card:hover{transform:translateY(-3px)}
+.card b{font-size:1.6rem;color:var(--ac)}.off{opacity:.55;cursor:default}.off:hover{transform:none}
+.bar{height:10px;border-radius:9px;background:var(--bd);overflow:hidden;margin-top:10px}.bar div{height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width .6s}
+.tip{background:rgba(108,92,255,.14);border-radius:16px;padding:12px 16px;margin-top:12px}
+.chips span{display:inline-block;margin:4px;padding:6px 12px;border-radius:99px;background:var(--gl);border:1px solid var(--bd)}.chips i{color:var(--mu);font-style:normal}
+.pat{padding:10px 14px;margin:6px 0;border-left:4px solid var(--ac);background:var(--gl);border-radius:0 12px 12px 0;font-weight:600}
+.hid{display:none}#tr{margin-top:12px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;background:var(--gl);color:var(--tx);border:1px solid var(--bd)}
+.ok{border-color:var(--ok)!important;background:rgba(22,163,74,.2)!important}.no{border-color:var(--no)!important;background:rgba(225,29,72,.18)!important}
+input,textarea,select{font:inherit;width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--bd);background:var(--gl);color:var(--tx);margin:6px 0}
+select{width:auto}
+#md{position:fixed;inset:0;z-index:95;display:none;place-items:center;background:rgba(5,5,20,.5)}
+#md .g{max-width:420px;padding:32px;text-align:center;margin:20px}
+.q{font-size:1.05rem;font-style:italic;color:var(--mu)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-
-<canvas id="confetti-canvas"></canvas>
-<div class="mouse-glow" id="mouseGlow"></div>
-
-<div class="wrap">
-<header>
-<h1>StepUp English: A1–C1 Fluency Masterclass</h1>
-<p class="lead">From zero to natural fluency across 36 comprehensive modules. Master listening, shadowing, and real-world speaking step by step.</p>
-</header>
-
-<main class="glass panel" id="main">
-<div id="vPath">
-<h2>Your Learning Path (36 Modules)</h2>
-<p class="muted" id="pmeta"></p>
-<div class="level-tabs" id="levelTabs"></div>
-<div class="steps" id="steps"></div>
-</div>
-
-<div id="vLearn" hidden>
-<h2 id="lTitle"></h2>
-<p class="muted">Tap the speaker, listen to natural pronunciation, repeat out loud (Shadowing), then take the quiz.</p>
-<div id="plist"></div>
-<div class="row"><button class="pill" id="back1">Back to Path</button><button class="pill main" id="toQuiz">Start Lesson Quiz</button></div>
-</div>
-
-<div id="vQuiz" hidden>
-<p class="muted" id="qp"></p>
-<p class="muted">Select the correct English phrase matching the meaning:</p>
-<div class="q" id="qt"></div>
-<div class="opts" id="opts"></div>
-<p class="fb" id="fb" aria-live="polite"></p>
-<div class="row"><button class="pill main" id="nx" hidden>Next Question</button></div>
-</div>
-
-<div id="vEnd" hidden>
-<p class="muted">Quiz Results</p>
-<div class="big" id="sc"></div>
-<p id="em" class="quote"></p>
-<div class="row"><button class="pill" id="retry">Practice Again</button><button class="pill main" id="goPath">Back to Master Path</button></div>
-</div>
-</main>
-
-<aside>
-<section class="glass panel">
-<h2>Words to Carry</h2>
-<div class="quote" id="qu"></div>
-<button class="pill" id="qn">Another Quote</button>
-</section>
-<section class="glass panel">
-<h2>Your Streak</h2>
-<div class="streak" id="stk">0</div>
-<p class="muted" id="stkm"></p>
-</section>
-</aside>
-
-<section class="glass panel full" id="fbk">
-<h2>How is your fluency journey going?</h2>
-<p class="muted">Your feedback helps refine our immersive audio-first curriculum.</p>
-<div class="stars" id="stars" role="group" aria-label="Rating"></div>
-<textarea id="ft" placeholder="What concepts helped you most? Any feedback?" aria-label="Your feedback"></textarea>
-<div class="row"><button class="pill main" id="fs">Send Feedback</button></div>
-<p class="fb" id="fm" aria-live="polite"></p>
-</section>
-</div>
-
+<div id="cg"></div><div id="cr"></div><canvas id="cf"></canvas>
+<header id="hd" class="hid"><b>Learn with Alif</b><span id="pg"></span><button class="b2" onclick="tg()" aria-label="Switch theme">◐</button><button class="b2" onclick="out()">Log out</button></header>
+<main id="app"></main>
+<div id="md"></div>
 <script>
-/* Mouse Follower Script */
-window.addEventListener('mousemove', (e) => {
-  const glow = document.getElementById('mouseGlow');
-  if (glow) {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  }
-});
-
-/* Confetti Particle System */
-function triggerConfetti() {
-  const canvas = document.getElementById('confetti-canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  let pieces = [];
-  const count = 120;
-  const colors = ['#2F5BFF', '#7C9BFF', '#0E8F5B', '#F5B82E', '#C9B6FF'];
-  
-  for (let i = 0; i < count; i++) {
-    pieces.push({
-      x: canvas.width / 2,
-      y: canvas.height / 2,
-      vx: (Math.random() - 0.5) * 16,
-      vy: (Math.random() - 0.7) * 16 - 4,
-      size: Math.random() * 8 + 4,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      rot: Math.random() * 360,
-      vRot: (Math.random() - 0.5) * 10
-    });
-  }
-  
-  let animationId;
-  function update() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    pieces.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += 0.4; // gravity
-      p.rot += p.vRot;
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rot * Math.PI / 180);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-      ctx.restore();
-    });
-    pieces = pieces.filter(p => p.y < canvas.height + 50);
-    if (pieces.length > 0) {
-      animationId = requestAnimationFrame(update);
-    } else {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  }
-  update();
-}
-
-/* 36 Modules Curriculum Data (A1 to C1 + Advanced Fluency) */
-var L = [
-  /* LEVEL 1: A1 BEGINNER */
-  {lvl:"Level 1: A1 Beginner", t:"Module 01", s:"Basic English Sentence Formation", i:[["Subject, verb, and object structure.","কর্তা, ক্রিয়া এবং কর্মের গঠন।"],["Positive and negative statements.","হ্যাঁ এবং না সূচক বাক্য।"],["Basic Yes/No questions.","সাধারণ হ্যাঁ/না প্রশ্ন।"],["WH questions in action.","ডব্লিউএইচ প্রশ্নমালা।"]]},
-  {lvl:"Level 1: A1 Beginner", t:"Module 02", s:"Essential Everyday Vocabulary", i:[["Greetings and polite phrases.","শুভেচ্ছা এবং ভদ্রতাসূচক বাক্য।"],["Family members and relationships.","পরিবারের সদস্য ও সম্পর্ক।"],["Daily routine activities.","দৈনন্দিন কাজের রুটিন।"],["Food, drinks, and dining.","খাবার, পানীয় এবং ডাইনিং।"]]},
-  {lvl:"Level 1: A1 Beginner", t:"Module 03", s:"Essential Speaking Patterns", i:[["Introducing yourself clearly.","নিজের পরিচয় স্পষ্টভাবে দেওয়া।"],["Talking about hobbies and likes.","শখ ও পছন্দ সম্পর্কে বলা।"],["Asking basic questions.","প্রাথমিক প্রশ্ন জিজ্ঞাসা করা।"],["Describing surroundings.","চারপাশ বর্ণনা করা।"]]},
-  {lvl:"Level 1: A1 Beginner", t:"Module 04", s:"Basic Listening Development", i:[["Recognizing familiar English words.","পরিচিত ইংরেজি শব্দ চেনা।"],["Understanding short sentences.","ছোট বাক্য বুঝতে পারা।"],["Listening to slow speech.","ধীর গতির কথপোকথন শোনা।"],["Following simple instructions.","সহজ নির্দেশাবলী অনুসরণ করা।"]]},
-  {lvl:"Level 1: A1 Beginner", t:"Module 05", s:"Pronunciation & Shadowing Foundation", i:[["English vowel and consonant sounds.","ইংরেজি স্বরবর্ণ ও ব্যঞ্জনবর্ণের উচ্চারণ।"],["Word stress and sentence rhythm.","শব্দ ও বাক্যের সঠিক ছন্দ।"],["Basic sentence shadowing.","মৌলিক বাক্য শ্যাডোইং अभ्यास।"],["Clear pronunciation practice.","স্পষ্ট উচ্চারণের অনুশীলন।"]]},
-  {lvl:"Level 1: A1 Beginner", t:"Module 06", s:"Everyday Conversation Practice", i:[["Meeting someone new.","নতুন কারো সাথে পরিচিত হওয়া।"],["Asking for help and directions.","সাহায্য এবং দিকনির্দেশ চাওয়া।"],["Making simple requests.","সহজ অনুরোধ করা।"],["Everyday conversation simulations.","প্রতিদিনের কথোপকথনের সিমুলেশন।"]]},
-
-  /* LEVEL 2: A2 ELEMENTARY */
-  {lvl:"Level 2: A2 Elementary", t:"Module 07", s:"Practical Vocabulary Expansion", i:[["Shopping and market expressions.","কেনাকাটা ও বাজারের অভিব্যক্তি।"],["Travel and transport vocabulary.","ভ্রমণ ও যাতায়াতের শব্দভাণ্ডার।"],["Health and emergency phrases.","স্বাস্থ্য ও জরুরি অবস্থার বাক্য।"],["Common phrasal verbs in life.","দৈনন্দিন জীবনের ফ্রেজাল ভার্ব।"]]},
-  {lvl:"Level 2: A2 Elementary", t:"Module 08", s:"Practical Sentence Patterns", i:[["Talking about past events.","অতীতের ঘটনা সম্পর্কে বলা।"],["Expressing future plans.","ভবিষ্যতের পরিকল্পনা প্রকাশ করা।"],["Making requests and suggestions.","অনুরোধ ও পরামর্শ দেওয়া।"],["Expressing ability and possibility.","ক্ষমতা ও সম্ভাবনা প্রকাশ করা।"]]},
-  {lvl:"Level 2: A2 Elementary", t:"Module 09", s:"Real-Life Speaking Situations", i:[["Restaurant and ordering food.","রেস্তোরাঁয় খাবার অর্ডার করা।"],["Airport and hotel communication.","এয়ারপোর্ট ও হোটেলের যোগাযোগ।"],["Telephone conversations.","ফোনে কথোপকথন।"],["Explaining everyday problems.","দৈনন্দিন সমস্যা ব্যাখ্যা করা।"]]},
-  {lvl:"Level 2: A2 Elementary", t:"Module 10", s:"Natural English Pronunciation", i:[["Connected speech and linking.","সংযুক্ত বাক্য ও লিংকিং সাউন্ড।"],["Weak forms and reduced sounds.","দুর্বল রূপ ও সংক্ষিপ্ত উচ্চারণ।"],["Natural intonation practice.","প্রাকৃতিক স্বরভঙ্গির অনুশীলন।"],["Conversation shadowing.","কথোপকথন শ্যাডোইং।"]]},
-  {lvl:"Level 2: A2 Elementary", t:"Module 11", s:"Listening Comprehension Development", i:[["Understanding everyday dialogues.","দৈনন্দিন সংলাপ বুঝতে পারা।"],["Listening to short stories.","ছোট গল্প শোনা।"],["Listening at natural speed.","স্বাভাবিক গতিতে শোনা।"],["Practising without subtitles.","সাবটাইটেল ছাড়া অনুশীলন।"]]},
-  {lvl:"Level 2: A2 Elementary", t:"Module 12", s:"Everyday Communication Mastery", i:[["Starting and maintaining chats.","কথোপকথন শুরু ও টিকিয়ে রাখা।"],["Asking follow-up questions.","ফলো-আপ প্রশ্ন করা।"],["Expressing opinions and feelings.","মতামত ও অনুভূতি প্রকাশ করা।"],["Speaking without preparation.","প্রস্তুতি ছাড়াই কথা বলা।"]]},
-
-  /* LEVEL 3: B1 INTERMEDIATE */
-  {lvl:"Level 3: B1 Intermediate", t:"Module 13", s:"Intermediate Vocabulary Mastery", i:[["Society, culture, and tech terms.","সমাজ, সংস্কৃতি ও প্রযুক্তির শব্দ।"],["Advanced collocations.","উন্নত কোলোকেশন।"],["Idioms for daily conversation.","দৈনন্দিন কথোপকথনের ইডিয়ম।"]]},
-  {lvl:"Level 3: B1 Intermediate", t:"Module 14", s:"Advanced Sentence Construction", i:[["Conditionals in communication.","যোগাযোগে শর্তযুক্ত বাক্য (Conditionals)।"],["Relative clauses usage.","রিলেটিভ ক্লজের ব্যবহার।"],["Passive voice in conversation.","কথোপকথনে প্যাসিভ ভয়েস।"]]},
-  {lvl:"Level 3: B1 Intermediate", t:"Module 15", s:"Natural Conversation Skills", i:[["Polite interruption techniques.","ভদ্রভাবে কথা কাটার কৌশল।"],["Expressing uncertainty and thoughts.","অনিশ্চয়তা ও চিন্তা প্রকাশ করা।"],["Maintaining long discussions.","দীর্ঘ আলোচনা চালিয়ে যাওয়া।"]]},
-  {lvl:"Level 3: B1 Intermediate", t:"Module 16", s:"Storytelling & Personal Expression", i:[["Narrating past experiences.","অতীতের অভিজ্ঞতা বর্ণনা করা।"],["Structuring personal stories.","ব্যক্তিগত গল্প গুছিয়ে বলা।"],["Spontaneous storytelling.","স্বতস্ফূর্ত গল্প বলা।"]]},
-  {lvl:"Level 3: B1 Intermediate", t:"Module 17", s:"Intermediate Listening Mastery", i:[["Understanding podcasts and interviews.","পডকাস্ট ও সাক্ষাৎকার বুঝতে পারা।"],["Recognizing regional accents.","আঞ্চলিক উচ্চারণ চেনা।"],["Identifying speaker attitude.","বক্তার মনোভাব বোঝা।"]]},
-  {lvl:"Level 3: B1 Intermediate", t:"Module 18", s:"Thinking & Speaking in English", i:[["Thinking directly in English.","সরাসরি ইংরেজিতে চিন্তা করা।"],["Reducing mental translation.","মানসিক অনুবাদ কমানো।"],["Extended speaking challenges.","দীর্ঘ সময় কথা বলার চ্যালেঞ্জ।"]]},
-
-  /* LEVEL 4: B2 UPPER-INTERMEDIATE */
-  {lvl:"Level 4: B2 Upper-Intermediate", t:"Module 19", s:"Advanced Vocabulary & Expressions", i:[["Professional and academic terms."," পেশাদার ও অ্যাকাডেমিক শব্দাবলী।"],["Nuanced expressions and register.","সুক্ষ্ম অভিব্যক্তি ও রেজিস্টার।"]]},
-  {lvl:"Level 4: B2 Upper-Intermediate", t:"Module 20", s:"Advanced Speaking Techniques", i:[["Persuasive speaking and debate.","প্ররোচণামূলক কথা ও বিতর্ক।"],["Answering difficult questions.","কঠিন প্রশ্নের উত্তর দেওয়া।"],["Public speaking mastery.","জনসমক্ষে কথা বলার দক্ষতা।"]]},
-  {lvl:"Level 4: B2 Upper-Intermediate", t:"Module 21", s:"Advanced Listening Skills", i:[["Fast-paced speech comprehension.","দ্রুতগতির বক্তৃতা বোধগম্যতা।"],["Humour, irony, and sarcasm.","হাস্যরস ও ব্যঙ্গ বুঝতে পারা।"]]},
-  {lvl:"Level 4: B2 Upper-Intermediate", t:"Module 22", s:"Professional Communication", i:[["Job interviews and meetings.","জব ইন্টারভিউ ও মিটিং।"],["Presentations and negotiations.","উপস্থাপনা ও নেগোসিয়েশন।"]]},
-  {lvl:"Level 4: B2 Upper-Intermediate", t:"Module 23", s:"Advanced Fluency Development", i:[["Speed thinking and quick responses.","দ্রুত চিন্তা ও চটজলদি প্রতিক্রিয়া।"],["Advanced shadowing techniques.","উন্নত শ্যাডোইং কৌশল।"]]},
-
-  /* LEVEL 5: C1 ADVANCED */
-  {lvl:"Level 5: C1 Advanced", t:"Module 24", s:"Advanced Language Development", i:[["Sophisticated vocabulary choices.","মার্জিত শব্দ চয়ন।"],["Subtle differences in meaning.","অর্থের সূক্ষ্ম পার্থক্য।"]]},
-  {lvl:"Level 5: C1 Advanced", t:"Module 25", s:"Advanced Listening Mastery", i:[["Native-speed complex discussions.","নেটিভ গতির জটিল আলোচনা।"],["Academic lectures comprehension.","অ্যাকাডেমিক লেকচার বুঝতে পারা।"]]},
-  {lvl:"Level 5: C1 Advanced", t:"Module 26", s:"Advanced Discussion & Debate", i:[["Philosophical and social debates.","দার্শনিক ও সামাজিক বিতর্ক।"],["Critical thinking arguments.","সমালোচনামূলক যুক্তিতর্ক।"]]},
-  {lvl:"Level 5: C1 Advanced", t:"Module 27", s:"Advanced Speaking & Presentation", i:[["Expert-level presentations.","বিশেষজ্ঞ লেভেলের প্রেজেন্টেশন।"],["Handling unexpected questions.","অপ্রত্যাশিত প্রশ্নের মোকাবিলা।"]]},
-  {lvl:"Level 5: C1 Advanced", t:"Module 28", s:"Natural English Mastery", i:[["Cultural context and pragmatics.","সাংস্কৃতিক প্রেক্ষাপট ও প্রায়োগিক ভাষা।"],["Flawless natural communication.","নিখুঁত ও স্বাভাবিক যোগাযোগ।"]]},
-
-  /* FINAL STAGE & SPECIALIZED MODULES */
-  {lvl:"Final & Special Modules", t:"Module 29", s:"Comprehensive Listening Examination", i:[["Full listening comprehension test.","পূর্ণাঙ্গ লিসনিং বোধগম্যতা পরীক্ষা।"]]},
-  {lvl:"Final & Special Modules", t:"Module 30", s:"Comprehensive Speaking Examination", i:[["Full speaking fluency evaluation.","পূর্ণাঙ্গ স্পিকিং ফ্লুয়েন্সি মূল্যায়ন।"]]},
-  {lvl:"Final & Special Modules", t:"Module 31", s:"Complete Shadowing Mastery", i:[["Advanced rhythm and intonation shadowing.","উন্নত ছন্দ ও স্বরভঙ্গি শ্যাডোইং।"]]},
-  {lvl:"Final & Special Modules", t:"Module 32", s:"English Pronunciation Science", i:[["IPA phonemes and connected speech science.","আইপিএ ফোনিম ও সংযুক্ত স্পিচ সায়েন্স।"]]},
-  {lvl:"Final & Special Modules", t:"Module 33", s:"English Thinking Development", i:[["Internal monologue training in English.","ইংরেজিতে অভ্যন্তরীণ মনোলগ প্রশিক্ষণ।"]]},
-  {lvl:"Final & Special Modules", t:"Module 34", s:"Listening Beyond Words", i:[["Understanding tone, intent, and subtext.","টোন, উদ্দেশ্য ও সাবটেক্সট বুঝতে পারা।"]]},
-  {lvl:"Final & Special Modules", t:"Module 35", s:"Conversation Fluency Training", i:[["Rapid response and pause recovery.","দ্রুত প্রতিক্রিয়া ও পজ রিকভারি।"]]},
-  {lvl:"Final & Special Modules", t:"Module 36", s:"English Immersion Training", i:[["Subtitle-free native media immersion.","সাবটাইটেল ছাড়া নেটিভ মিডিয়া ইমার্শন।"]]}
-];
-
-var Q=[
-  "Consistency is the key to fluency.",
-  "Small steps every single day build mastery.",
-  "Fluency is built through active listening and speaking.",
-  "Mistakes are proof that you are growing.",
-  "Think in English, speak with confidence."
-];
-
-var $=function(i){return document.getElementById(i)};
-var S={done:[],streak:0,last:""};
-try{var raw=localStorage.getItem("su-state-36");if(raw)S=JSON.parse(raw)}catch(e){}
-function save(){try{localStorage.setItem("su-state-36",JSON.stringify(S))}catch(e){}}
-function ds(d){return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
-function today(){return ds(new Date())}
-function yest(){var d=new Date();d.setDate(d.getDate()-1);return ds(d)}
-function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
-function show(v){["vPath","vLearn","vQuiz","vEnd"].forEach(function(x){$(x).hidden=x!==v});$("main").scrollIntoView({block:"start"})}
-
-/* Quotes & Streak */
-var qi=Math.floor(Date.now()/864e5)%Q.length;
-function showQuote(){$("qu").textContent=Q[qi]}
-$("qn").onclick=function(){qi=(qi+1)%Q.length;showQuote()};
-function showStreak(){
-  var live=(S.last===today()||S.last===yest())?S.streak:0;
-  $("stk").textContent=live+(live===1?" day":" days");
-  $("stkm").textContent=S.last===today()?"You practiced today. Keep pushing!":"Complete one module activity today to maintain your streak.";
-}
-
-/* Level Tabs & Path Rendering */
-var currentLevelFilter = "All";
-const levelsList = ["All", "Level 1: A1 Beginner", "Level 2: A2 Elementary", "Level 3: B1 Intermediate", "Level 4: B2 Upper-Intermediate", "Level 5: C1 Advanced", "Final & Special Modules"];
-
-function renderTabs(){
-  var box=$("levelTabs");box.innerHTML="";
-  levelsList.forEach(function(lvl){
-    var b=document.createElement("button");
-    b.className="ltab"+(currentLevelFilter===lvl?" active":"");
-    b.textContent=lvl;
-    b.onclick=function(){currentLevelFilter=lvl;renderPath()};
-    box.appendChild(b);
-  });
-}
-
-function renderPath(){
-  renderTabs();
-  var totalDone=S.done.filter(Boolean).length;
-  $("pmeta").textContent=totalDone+" of "+L.length+" modules complete"+(totalDone===L.length?". Incredible! You are a Fluency Master.":"");
-  var box=$("steps");box.innerHTML="";
-  
-  L.forEach(function(lv,i){
-    if(currentLevelFilter!=="All" && lv.lvl!==currentLevelFilter)return;
-    var locked=i>0&&!S.done[i-1],done=!!S.done[i];
-    var b=document.createElement("button");
-    b.className="step"+(done?" done":"");b.disabled=locked;
-    b.innerHTML='<span class="dot">'+(done?"✓":(i+1))+'</span><span><b></b><span class="muted"></span></span><span class="tag"></span>';
-    b.querySelector("b").textContent=lv.t+": "+lv.s;
-    b.querySelector(".muted").textContent=lv.lvl;
-    b.querySelector(".tag").textContent=locked?"Locked":done?"Review":"Start";
-    b.onclick=function(){openLesson(i)};
-    box.appendChild(b);
-  });
-}
-
-/* Lesson Viewer */
-var cur=0;
-function speak(t){
-  if(!window.speechSynthesis)return;
-  try{var u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}
-}
-function openLesson(i){
-  cur=i;$("lTitle").textContent=L[i].t+": "+L[i].s;
-  var p=$("plist");p.innerHTML="";
-  L[i].i.forEach(function(x){
-    var d=document.createElement("div");d.className="phr";
-    d.innerHTML='<div><div class="en"></div><div class="bn"></div></div><button class="spk" aria-label="Listen">🔊</button>';
-    d.querySelector(".en").textContent=x[0];d.querySelector(".bn").textContent=x[1];
-    d.querySelector(".spk").onclick=function(){speak(x[0])};
-    p.appendChild(d);
-  });
-  show("vLearn");
-}
-$("back1").onclick=function(){show("vPath")};
-$("toQuiz").onclick=startQuiz;
-
-/* Quiz System */
-var qs=[],k=0,score=0,ans=false;
-function startQuiz(){
-  var items=L[cur].i;
-  qs=shuffle(items).map(function(it){return{it:it,opts:shuffle(items)}});
-  k=0;score=0;show("vQuiz");showQ();
-}
-function showQ(){
-  ans=false;var q=qs[k];
-  $("qp").textContent="Question "+(k+1)+" of "+qs.length;
-  $("qt").textContent=q.it[1];$("fb").textContent="";$("nx").hidden=true;
-  var o=$("opts");o.innerHTML="";
-  q.opts.forEach(function(x){
-    var b=document.createElement("button");b.className="opt";b.textContent=x[0];
-    b.onclick=function(){pick(b,x===q.it)};o.appendChild(b);
-  });
-}
-function pick(b,ok){
-  if(ans)return;ans=true;var q=qs[k];
-  if(ok){score++;b.classList.add("right");$("fb").textContent="Correct!";$("fb").style.color="var(--ok)"}
-  else{
-    b.classList.add("wrong");$("fb").textContent="Not quite. Correct: "+q.it[0];$("fb").style.color="var(--bad)";
-    Array.prototype.forEach.call($("opts").children,function(c){if(c.textContent===q.it[0])c.classList.add("right")});
-  }
-  speak(q.it[0]);
-  $("nx").textContent=k===qs.length-1?"See Results":"Next Question";$("nx").hidden=false;$("nx").focus();
-}
-$("nx").onclick=function(){if(k<qs.length-1){k++;showQ()}else finish()};
-function finish(){
-  var pass=score>=Math.ceil(qs.length/2);
-  $("sc").textContent=score+" / "+qs.length;
-  if(pass){
-    S.done[cur]=true;
-    if(S.last!==today()){S.streak=(S.last===yest())?S.streak+1:1;S.last=today()}
-    save();showStreak();renderPath();
-    triggerConfetti();
-    $("em").textContent=cur===L.length-1?"Magnificent! You completed the entire A1-C1 Masterclass. You are a true English Fluency Hero.":"Module complete! The next fluency step is unlocked.";
-  }else $("em").textContent="Review the phrases carefully and try again to unlock the next module.";
-  $("retry").textContent=pass?"Practice Again":"Try Again";
-  show("vEnd");
-}
-$("retry").onclick=function(){openLesson(cur)};
-$("goPath").onclick=function(){show("vPath")};
-
-/* Feedback Section */
-var rating=0,st=$("stars");
-for(var r=1;r<=5;r++)(function(n){
-  var b=document.createElement("button");b.textContent="★";b.setAttribute("aria-label",n+" star"+(n>1?"s":""));b.setAttribute("aria-pressed","false");
-  b.onclick=function(){rating=n;Array.prototype.forEach.call(st.children,function(c,j){c.classList.toggle("on",j<n);c.setAttribute("aria-pressed",j<n)})};
-  st.appendChild(b);
-})(r);
-$("fs").onclick=function(){
-  var m=$("fm");
-  if(!rating){m.style.color="var(--bad)";m.textContent="Please choose a star rating first.";return}
-  var data={rating:rating,message:$("ft").value.trim(),modules_done:S.done.filter(Boolean).length};
-  try{localStorage.setItem("su-feedback",JSON.stringify(data))}catch(e){}
-  m.style.color="var(--ok)";m.textContent="Thank you! Your feedback has been recorded.";
-  $("fs").disabled=true;
-};
-
-showQuote();showStreak();renderPath();
+const $=s=>document.querySelector(s);
+let S={d:{}},cur=null;
+try{S=JSON.parse(localStorage.getItem("lwa"))||{d:{}}}catch(e){}
+const save=()=>{try{localStorage.setItem("lwa",JSON.stringify(S))}catch(e){}};
+const T="Basic English Sentence Formation|Essential Everyday Vocabulary|Essential Speaking Patterns|Basic Listening Development|Pronunciation & Shadowing Foundation|Everyday Conversation Practice|Practical Vocabulary Expansion|Practical Sentence Patterns|Real-Life Speaking Situations|Natural English Pronunciation|Listening Comprehension Development|Everyday Communication Mastery|Intermediate Vocabulary Mastery|Advanced Sentence Construction|Natural Conversation Skills|Storytelling & Personal Expression|Intermediate Listening Mastery|Thinking & Speaking in English|Advanced Vocabulary & Expressions|Advanced Speaking Techniques|Advanced Listening Skills|Professional Communication|Advanced Fluency Development|Advanced Language Development|Advanced Listening Mastery|Advanced Discussion & Debate|Advanced Speaking & Presentation|Natural English Mastery|Comprehensive Listening Examination|Comprehensive Speaking Examination|Complete Shadowing Mastery|English Pronunciation Science|English Thinking Development|Listening Beyond Words|Conversation Fluency Training|English Immersion Training".split("|");
+const G=[["A1","Beginner",1,6],["A2","Elementary",7,12],["B1","Intermediate",13,18],["B2","Upper-Intermediate",19,23],["C1","Advanced",24,28],["Final","Exams",29,30],["Pro","Specialist Skills",31,36]];
+const Q=["Consistency is the key.","Small steps every day beat big jumps once a month.","Don’t translate. Think, then speak.","Your voice is your superpower."];
+const L={
+1:[{t:"Say Who You Are",o:["Say your name, age and city","Use ready-made “I’m…” patterns"],e:"English speakers start with ready-made chunks. Learn the chunk, swap one word, and speak. There are no rules to memorise here — just listen, repeat and use.",bn:"‘আমি ঢাকায় থাকি’ = I live in Dhaka. Chunk-টা পুরো মুখস্থ করো, শুধু শব্দ বদলাও।",v:[["student","ছাত্র / ছাত্রী"],["live","বাস করা"],["from","থেকে"],["Nice to meet you","পরিচিত হয়ে ভালো লাগলো"]],p:["I’m ___.","My name is ___.","I live in ___.","I’m ___ years old."],d:[["Sara","Hi! I’m Sara. What’s your name?"],["Tom","Nice to meet you, Sara. My name is Tom."],["Sara","Where do you live, Tom?"],["Tom","I live in Dhaka. And you?"],["Sara","I live in Chattogram. I’m a student."]],q:[{q:"Where does Tom live?",o:["Chattogram","Dhaka","Sylhet"],a:1},{q:"What is Sara’s job?",o:["Teacher","Doctor","Student"],a:2}],s:"Say 4 sentences about yourself: name, city, age and one more fact. Record yourself and listen back.",m:"Don’t say “I am live in Dhaka.” Say “I live in Dhaka.”",h:"Say your introduction to a mirror 3 times today."},
+{t:"Ask Simple Questions",o:["Ask someone’s name, city and feelings","Answer in short, natural replies"],e:"Questions are chunks too. Learn them whole, with the right melody: your voice goes up for yes/no questions and down for question words.",bn:"‘তুমি কেমন আছো?’ = How are you? ‘তুমি কোথা থেকে?’ = Where are you from?",v:[["from","থেকে"],["fine","ভালো"],["favourite","প্রিয়"],["too","-ও"]],p:["How are you?","Where are you from?","What do you do?","Do you like ___?"],d:[["Anna","Hi Raj! How are you?"],["Raj","I’m fine, thanks. And you?"],["Anna","Great! Where are you from?"],["Raj","I’m from Sylhet. Do you like tea?"],["Anna","Yes, I love tea! Sylhet has the best tea."]],q:[{q:"Where is Raj from?",o:["Dhaka","Sylhet","Khulna"],a:1},{q:"What does Anna love?",o:["Coffee","Tea","Juice"],a:1}],s:"Ask a friend (or a mirror) 4 questions, then answer them yourself out loud.",m:"Don’t say “Where you are from?” Say “Where are you from?”",h:"Ask 3 people one of today’s questions in English, or send yourself a voice message."}],
+2:[{t:"Greetings All Day",o:["Greet people at any time of day","Reply naturally to “How’s it going?”"],e:"Real speakers use short, warm greetings. Match the greeting to the time of day and add a quick follow-up.",bn:"সকালে Good morning, বিকেলে Good afternoon, সন্ধ্যায় Good evening। Good night বলা হয় বিদায়ের সময়।",v:[["morning","সকাল"],["afternoon","দুপুর / বিকেল"],["evening","সন্ধ্যা"],["See you later","পরে দেখা হবে"]],p:["Good morning! How’s it going?","Not bad, thanks. You?","See you later!","Take care!"],d:[["Mia","Good morning, Sam! How’s it going?"],["Sam","Not bad, thanks. A bit sleepy. You?"],["Mia","I’m great! I had tea this morning."],["Sam","Nice! Well, I have to go. See you later!"],["Mia","See you! Take care!"]],q:[{q:"How does Sam feel?",o:["Sleepy","Angry","Hungry"],a:0},{q:"What does Sam say at the end?",o:["Good night","See you later","Come here"],a:1}],s:"Greet 3 imaginary people: one in the morning, one in the afternoon, one in the evening. Add a follow-up each time.",m:"Don’t use “Good night” as a greeting at 8 pm. It means goodbye.",h:"Greet your family in English tomorrow morning."}],
+3:[{t:"Talk About Your Day",o:["Describe your routine in order","Link ideas with “then” and “after that”"],e:"Tell your day like a mini story: first, then, after that. The time words do the work for you.",bn:"‘আমি ছয়টায় উঠি’ = I wake up at six. তারপর = then। এরপর = after that।",v:[["wake up","ঘুম থেকে ওঠা"],["breakfast","সকালের নাস্তা"],["then","তারপর"],["after that","এরপর"]],p:["I wake up at ___.","Then I ___.","After that, I ___.","In the evening, I ___."],d:[["Ben","Mina, what’s your day like?"],["Mina","I wake up at six. Then I have breakfast."],["Mina","After that, I go to school by bus."],["Ben","And in the evening?"],["Mina","I study for two hours. Then I watch a movie."]],q:[{q:"When does Mina wake up?",o:["At six","At seven","At eight"],a:0},{q:"How does she go to school?",o:["By rickshaw","By bus","On foot"],a:1}],s:"Tell your day in 5 sentences with “then” and “after that”. Aim for 45 seconds without stopping.",m:"Don’t say “I am wake up.” Say “I wake up.”",h:"Each night, tell your day in English for one minute."}]};
+const tot=Object.values(L).reduce((a,b)=>a+b.length,0);
+const dn=()=>Object.keys(S.d).length;
+function pg(){$("#pg").textContent=dn()+" / "+tot+" lessons done"}
+function boot(){if(S.in){$("#hd").classList.remove("hid");home()}else login()}
+function login(){$("#hd").classList.add("hid");$("#app").innerHTML=`<div class="g p" style="max-width:420px;margin:12vh auto"><h1>Learn with Alif</h1><p class="mu">ইংরেজি শিখো, একদম ফ্রিতে। Listen. Speak. Think in English.</p><input id="u" placeholder="Username" autocomplete="username"><input id="pw" type="password" placeholder="Password" autocomplete="current-password" onkeydown="if(event.key==='Enter')go()"><p id="er" style="color:var(--no);margin:4px 0"></p><button class="cta" onclick="go()">Log in</button></div>`}
+function go(){if($("#u").value.trim().toLowerCase()==="alif"&&$("#pw").value==="learnwithalif"){S.in=1;save();boot()}else $("#er").textContent="Wrong username or password. Check both and try again."}
+function out(){S.in=0;save();speechSynthesis.cancel();login()}
+function home(){pg();const p=Math.round(dn()/tot*100);
+$("#app").innerHTML=`<div class="g p"><h1>Welcome back, Alif 👋</h1><p class="q">“${Q[Math.floor(Math.random()*Q.length)]}”</p><p>আজ কোন lesson শুরু করবে? Pick a module and start with your ears, not your textbook.</p><div class="bar"><div style="width:${p}%"></div></div><small>${dn()} of ${tot} live lessons complete. The other modules are being filled in.</small></div>`+
+G.map(([lv,nm,a,b])=>`<h2>${lv} <i>${nm}</i></h2><div class="grid">`+Array.from({length:b-a+1},(_,j)=>{const n=a+j,k=L[n],c=k?k.filter((_,i)=>S.d[n+"."+(i+1)]).length:0;return `<div class="g card ${k?"":"off"}" ${k?`onclick="mod(${n})"`:""}><b>${String(n).padStart(2,"0")}</b><h4>${T[n-1]}</h4><small>${k?c+" / "+k.length+" lessons done":"Coming soon"}</small></div>`}).join("")+`</div>`).join("")+
+`<div class="g p"><h3>Final feedback</h3><p class="mu">What helped? What was confusing?</p><textarea id="fb" rows="3">${S.fb||""}</textarea><button onclick="fb()">Save feedback</button> <small id="fbm"></small></div>`}
+function fb(){S.fb=$("#fb").value;save();$("#fbm").textContent="Saved on this device. Thank you!"}
+function mod(n){speechSynthesis.cancel();$("#app").innerHTML=`<button class="b2" onclick="home()">← All modules</button><h1>Module ${n}: ${T[n-1]}</h1>`+L[n].map((l,i)=>`<div class="g card" onclick="les(${n},${i})"><h4>Lesson ${n}.${i+1} · ${l.t}</h4><small>${S.d[n+"."+(i+1)]?"✓ Completed":"Not started"}</small></div><div style="height:12px"></div>`).join("");scrollTo(0,0)}
+function les(n,i){const l=L[n][i],id=n+"."+(i+1);cur={n,i,l,id};
+$("#app").innerHTML=`<button class="b2" onclick="mod(${n})">← Module ${n}</button>
+<div class="g p"><small>Lesson ${id}</small><h1>${l.t}</h1><h3>🎯 You will learn</h3><ul>${l.o.map(x=>`<li>${x}</li>`).join("")}</ul><p>${l.e}</p><div class="tip">🇧🇩 ${l.bn}</div></div>
+<div class="g p"><h3>📚 Words in context</h3><div class="chips">${l.v.map(v=>`<span>${v[0]} <i>${v[1]}</i></span>`).join("")}</div><h3>🧩 Patterns to use</h3>${l.p.map(x=>`<div class="pat">${x}</div>`).join("")}</div>
+<div class="g p"><h3>🎧 Listen first</h3><p class="mu">Voices are computer text-to-speech, not human recordings. Listen once without reading.</p><div class="row"><button onclick="say(cur.l.d,.65)">▶ Slow</button><button onclick="say(cur.l.d,.95)">▶ Normal</button><button class="b2" onclick="speechSynthesis.cancel()">■ Stop</button><button class="b2" onclick="$('#tr').classList.toggle('hid')">Show / hide transcript</button></div><div id="tr" class="hid">${l.d.map(x=>`<p><b>${x[0]}:</b> ${x[1]}</p>`).join("")}</div></div>
+<div class="g p"><h3>🗣️ Shadowing</h3><p class="mu">Play a line, then say it together with the voice. Copy the rhythm and the melody.</p><div class="row">Speed <select id="sp"><option value=".65">Slow</option><option value=".95" selected>Normal</option><option value="1.2">Fast</option></select></div>${l.d.map((x,k)=>`<div class="row" style="margin:8px 0"><button class="b2" onclick="say([cur.l.d[${k}]],+$('#sp').value)">▶</button><span>${x[1]}</span></div>`).join("")}</div>
+<div class="g p"><h3>✅ Listening check</h3>${l.q.map((q,qi)=>`<p><b>${q.q}</b></p>`+q.o.map((o,oi)=>`<button class="opt" onclick="pick(this,${q.a},${oi})">${o}</button>`).join("")).join("")}</div>
+<div class="g p"><h3>🎤 Speaking challenge</h3><p>${l.s}</p><div class="row"><button onclick="tm(this)">Start 60 s timer</button><button class="b2" onclick="rec(this)">● Record</button></div><audio id="pb" controls hidden></audio><p class="mu">Recording is for self-checking. Nothing here scores your pronunciation.</p></div>
+<div class="g p"><h3>⚠️ Common mistake</h3><p>${l.m}</p><h3>📝 Homework</h3><p>${l.h}</p><button class="cta" onclick="fin()">${S.d[id]?"Completed ✓ — mark again":"Complete lesson"}</button></div>`;scrollTo(0,0)}
+function pick(b,a,i){[...b.parentNode.querySelectorAll(".opt")].forEach(x=>x.disabled=true);b.classList.add(i===a?"ok":"no");if(i!==a){const c=b.parentNode.querySelectorAll(".opt");}}
+let vs=[];const lv=()=>{vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang))};
+try{lv();speechSynthesis.onvoiceschanged=lv}catch(e){}
+function say(ls,r){try{speechSynthesis.cancel()}catch(e){return}const sp={};let i=0;(function nx(){if(i>=ls.length)return;const[s,t]=ls[i++];if(!(s in sp))sp[s]=Object.keys(sp).length;const k=sp[s],u=new SpeechSynthesisUtterance(t);u.lang="en-US";if(vs.length)u.voice=vs[k%vs.length];u.pitch=k?.8:1.15;u.rate=r;u.onend=nx;speechSynthesis.speak(u)})()}
+let tI,mr,ch=[];
+function tm(b){clearInterval(tI);let n=60;b.textContent=n+" s";tI=setInterval(()=>{n--;b.textContent=n>0?n+" s":"Time’s up!";if(n<=0)clearInterval(tI)},1e3)}
+async function rec(b){try{if(mr&&mr.state==="recording"){mr.stop();b.textContent="● Record";return}const st=await navigator.mediaDevices.getUserMedia({audio:true});mr=new MediaRecorder(st);ch=[];mr.ondataavailable=e=>ch.push(e.data);mr.onstop=()=>{st.getTracks().forEach(t=>t.stop());const a=$("#pb");a.src=URL.createObjectURL(new Blob(ch));a.hidden=false;a.play()};mr.start();b.textContent="■ Stop"}catch(e){alert("The microphone isn’t available here. Say your answer out loud and judge it yourself.")}}
+function fin(){S.d[cur.id]=1;save();pg();boom();const n=cur.n;$("#md").style.display="grid";$("#md").innerHTML=`<div class="g"><h1>🎉 Congratulations!</h1><p>You finished Lesson ${cur.id}: ${cur.l.t}.</p><p class="q">“Consistency is the key.”</p><button class="cta" onclick="$('#md').style.display='none';mod(${n})">Continue</button></div>`}
+function boom(){const c=$("#cf"),x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;c.style.display="block";const P=Array.from({length:170},()=>({x:innerWidth/2,y:innerHeight/3,vx:(Math.random()-.5)*17,vy:Math.random()*-15-4,r:Math.random()*6+3,c:`hsl(${Math.random()*360},90%,60%)`,a:Math.random()*6}));let f=0;(function d(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;x.fillStyle=p.c;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillRect(-p.r,-p.r/2,p.r*2,p.r);x.restore()});if(++f<170)requestAnimationFrame(d);else c.style.display="none"})()}
+function tg(){const d=document.documentElement;d.dataset.theme=(d.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark"?"light":"dark"}
+let mx=0,my=0,rx=0,ry=0;const cg=$("#cg"),cr=$("#cr");
+addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;cg.style.transform=`translate(${mx-210}px,${my-210}px)`;const t=e.target.closest&&e.target.closest(".g");if(t){const r=t.getBoundingClientRect();t.style.setProperty("--mx",e.clientX-r.left+"px");t.style.setProperty("--my",e.clientY-r.top+"px")}});
+(function l(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;cr.style.transform=`translate(${rx-14}px,${ry-14}px)`;requestAnimationFrame(l)})();
+boot();
 </script>
 </body>
 </html>
